@@ -1,0 +1,161 @@
+{
+    "messages": [
+        {
+            "<class 'langchain_core.messages.human.HumanMessage'>": {
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "I have some leftover chicken and rice. What can I make?"
+                    }
+                ],
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "67862b87-e863-4320-b41a-6e118e0dbfcd"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "",
+                "additional_kwargs": {
+                    "tool_calls": [
+                        {
+                            "id": "4kTELHB1G",
+                            "function": {
+                                "name": "web_search",
+                                "arguments": "{\"query\": \"chicken and rice recipes\"}"
+                            },
+                            "index": 0
+                        }
+                    ]
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "prompt_tokens": 138,
+                        "total_tokens": 153,
+                        "completion_tokens": 15
+                    },
+                    "model_name": "mistral-small",
+                    "model": "mistral-small",
+                    "finish_reason": "tool_calls",
+                    "model_provider": "mistralai"
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019b7457-921f-73e0-9de1-2acb71d2b65b-0",
+                "tool_calls": [
+                    {
+                        "name": "web_search",
+                        "args": {
+                            "query": "chicken and rice recipes"
+                        },
+                        "id": "4kTELHB1G",
+                        "type": "tool_call"
+                    }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 138,
+                    "output_tokens": 15,
+                    "total_tokens": 153
+                }
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "{\"query\": \"chicken and rice recipes\", \"follow_up_questions\": null, \"answer\": null, \"images\": [], \"results\": [{\"url\": \"https://www.acouplecooks.com/chicken-and-rice-recipe/\", \"title\": \"Easy Chicken and Rice - Dinner Recipes - A Couple Cooks\", \"content\": \"# Easy Chicken and Rice. This one pot **chicken and rice recipe** is an easy dinner with tender chicken thighs and fluffy rice, topped with a fresh lemon parsley gremolata. ## Key ingredients in this chicken and rice recipe. * **This recipe is for boneless, skinless chicken thighs.**This type cooks quicker and is easier to eat than bone-in. This chicken and rice recipe is tasty as is, but it’s even better topped with a fresh garnish. ## Easy Chicken and Rice. This one pot chicken and rice is the perfect easy dinner bursting with flavor! Tender chicken thighs and fluffy rice simmer in a cozy broth, with a burst of freshness from the zesty parsley and lemon gremolata topping. 1. Dry the chicken thighs and season with the kosher salt, garlic powder, onion powder and lots of fresh ground pepper. Add the chicken and cook 3 to 4 minutes per side, until golden brown. This chicken and rice recipe is one of my favorite chicken dinner ideas.\", \"score\": 0.91813606, \"raw_content\": null}, {\"url\": \"https://iowagirleats.com/one-pot-chicken-and-rice/\", \"title\": \"One Pot Chicken and Rice - Family Favorite Recipe - Iowa Girl Eats\", \"content\": \"Part risotto (without all the stirring) and part soup, this creamy chicken and rice recipe is simple, comforting, and made entirely in one pot with fridge and pantry staples. **Step 4:** Season **chicken breasts** that have been chopped into bite-sized pieces with **seasoned salt** and **pepper** then add to the soup pot and continue to simmer until the rice is al dente and the chicken is cooked through, 7-10 additional minutes. The dish will thicken as it cools, and you can taste the flavor much better when the chicken and rice is warm vs piping hot, so I like to let the pot sit uncovered for an additional 10 minutes or so before scooping into bowls and serving. Add dried parsley and chicken stock then turn heat up to high to bring to a boil, stirring occasionally to ensure the rice doesn’t stick to the bottom of the pot as it comes to a boil.\", \"score\": 0.8923472, \"raw_content\": null}, {\"url\": \"https://www.youtube.com/watch?v=ljAweVNvqGc\", \"title\": \"Lemon Garlic Butter Baked Chicken and Rice - YouTube\", \"content\": \"Lemon Garlic Butter Baked Chicken and Rice\\nThe Stay At Home Chef\\n1300000 subscribers\\n1384 likes\\n42550 views\\n16 Oct 2025\\nThis Lemon Garlic Parmesan Baked Chicken and Rice is the ultimate one-pan dinner. Juicy, seasoned chicken thighs bake right on top of creamy parmesan rice, all flavored with garlic, lemon, and buttery goodness. No stovetop required—just mix, bake, and enjoy!\\n\\nGet the printable recipe at https://thestayathomechef.com/lemon-baked-chicken-and-rice/\\n\\n⭐ One-pan dinner with zero stovetop steps\\n⭐ Creamy parmesan rice baked right in\\n⭐ Great for busy weeknights or meal prep\\n\\n🍋🍗🧄🍚🧈🧂🧀🍽️🥄🌿\\n\\nINGREDIENTS\\n⚬ 1 cup long grain white rice (jasmine or basmati)\\n⚬ 2 cups chicken broth\\n⚬ 1 cup heavy cream\\n⚬ 1 cup freshly grated parmesan cheese\\n⚬ 1 tablespoon minced garlic\\n⚬ 1/2 teaspoon salt\\n⚬ 1/2 teaspoon black pepper\\n⚬ 6 boneless skinless chicken thighs (about 2 pounds)\\n⚬ 1 1/2 teaspoons paprika\\n⚬ 1 1/2 teaspoons garlic powder\\n⚬ 1 teaspoon salt\\n⚬ 1 teaspoon onion powder\\n⚬ 1/2 teaspoon crushed red pepper flakes\\n⚬ 1/2 teaspoon black pepper\\n⚬ 1 medium lemon (zested and juiced)\\n⚬ 6 tablespoons salted butter\\n⚬ Optional: lemon slices\\n⚬ Optional: chopped fresh parsley\\n\\nINSTRUCTIONS\\n1️⃣ Preheat oven to 350°F (175°C). Lightly grease a 9×13-inch baking dish.\\n\\n2️⃣ In the baking dish, combine rice, chicken broth, cream, parmesan, garlic, salt, and pepper. Stir and spread evenly.\\n\\n3️⃣ Pat chicken thighs dry. Mix paprika, garlic powder, salt, onion powder, red pepper flakes, and black pepper. Rub over chicken.\\n\\n4️⃣ Nestle chicken thighs into the rice. Sprinkle lemon zest and drizzle juice over the top. Place a pat of butter on each thigh. Add lemon slices if using.\\n\\n5️⃣ Cover tightly with foil. Bake for 35 minutes.\\n\\n6️⃣ Remove foil and bake uncovered for 15–20 more minutes, until chicken is cooked through and rice is tender.\\n\\n7️⃣ Garnish with fresh parsley if desired. Serve hot.\\n\\nSubscribe for more restaurant-quality recipes you can easily make at home.\\n\\n#bakedchickenandrice #lemonchicken #onepandinner #easychickenrecipe #weeknightdinner #ricecasserole #thestayathomechef\\n45 comments\\n\", \"score\": 0.8815438, \"raw_content\": null}, {\"url\": \"https://cookinginthemidwest.com/blog/marry-me-chicken-rice/\", \"title\": \"Marry Me Chicken and Rice - Cooking in the Midwest\", \"content\": \"# Marry Me Chicken and Rice. One Pan Marry Me Chicken and Rice is an easy dinner recipe the whole family will love! This chicken and rice dish has all of the flavors of Marry Me Chicken, but is all made in one pan in about 30 minutes! ## Make Marry Me Chicken and Rice. Season the chicken with salt, pepper, oregano, thyme, onion powder, garlic powder, and red pepper flakes. Next, add 1 tbsp minced garlic, the chopped sun dried tomatoes, 1 cup of uncooked and rinsed long grain white rice, and 2 cups of chicken broth. ## Serve Marry Me Chicken and Rice. ## Marry Me Chicken and Rice. Marry Me Chicken and Rice is an easy one pan dinner that can be made in about 30 minutes! Keyword: Marry Me Chicken and Rice, One Pan Meal. * Next, add 1 tbsp minced garlic, the chopped sun dried tomatoes, 1 cup of uncooked and rinsed rice, and 2 cups of chicken broth.\", \"score\": 0.8624794, \"raw_content\": null}, {\"url\": \"https://www.budgetbytes.com/one-pot-chicken-and-rice/\", \"title\": \"One Pot Chicken and Rice - Budget Bytes\", \"content\": \"This Chicken and Rice one pot meal is the kind of comfort food I make time and time again, and it’s definitely moving to the top of my list of favorite recipes. This super simple dish includes juicy chicken thighs coated in herbs and spices (not spicy!), sautéed onions, and long grain white rice cooked in vegetable broth. Since I didn’t add any vegetables *in* the pot with my chicken and rice, I added some roasted broccoli on the side. This hearty and delicious chicken and rice combines rich and flavorful rice with well seasoned chicken or an easy one pot meal. So easy to try many different types of spice profiles- this would be a great base, for instance- for Spanish rice and chicken one pot meal- just get some tomato bouillon and some tomato paste added after the onions would make a really excellent alternative- season the chicken with adobo, beans as a side etc.\", \"score\": 0.86108357, \"raw_content\": null}], \"response_time\": 0.68, \"request_id\": \"87b012f9-7cfa-4e10-8ceb-b73d21e38146\"}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "web_search",
+                "id": "d020902b-08ab-4bc2-9890-3a7e865eed05",
+                "tool_call_id": "4kTELHB1G",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "Here are some recipes you can make with leftover chicken and rice:\n\n1. **Easy Chicken and Rice** - This one-pot chicken and rice recipe is an easy dinner with tender chicken thighs and fluffy rice, topped with a fresh lemon parsley gremolata. [Read more](https://www.acouplecooks.com/chicken-and-rice-recipe/)"
+                    },
+                    {
+                        "type": "reference",
+                        "reference_ids": [
+                            "web_search"
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": ".results.0.url.  \n2. **One Pot Chicken and Rice** - This creamy chicken and rice recipe is simple, comforting, and made entirely in one pot with fridge and pantry staples. [Read more](https://iowagirleats.com/one-pot-chicken-and-rice/)"
+                    },
+                    {
+                        "type": "reference",
+                        "reference_ids": [
+                            "web_search"
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": ".results.1.url.  \n3. **Lemon Garlic Butter Baked Chicken and Rice** - This Lemon Garlic Parmesan Baked Chicken and Rice is the ultimate one-pan dinner. Juicy, seasoned chicken thighs bake right on top of creamy parmesan rice, all flavored with garlic, lemon, and buttery goodness. [Read more](https://www.youtube.com/watch?v=ljAweVNvqGc)"
+                    },
+                    {
+                        "type": "reference",
+                        "reference_ids": [
+                            "web_search"
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": ".results.2.url.  \n4. **Marry Me Chicken and Rice** - This one-pan meal is an easy dinner recipe the whole family will love! This chicken and rice dish has all of the flavors of Marry Me Chicken, but is all made in one pan in about 30 minutes. [Read more](https://cookinginthemidwest.com/blog/marry-me-chicken-rice/)"
+                    },
+                    {
+                        "type": "reference",
+                        "reference_ids": [
+                            "web_search"
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": ".results.3.url.  \n5. **One Pot Chicken and Rice** - This Chicken and Rice one-pot meal is the kind of comfort food I make time and time again, and it’s definitely moving to the top of my list of favorite recipes. [Read more](https://www.budgetbytes.com/one-pot-chicken-and-rice/)"
+                    },
+                    {
+                        "type": "reference",
+                        "reference_ids": [
+                            "web_search"
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": ".results.4.url."
+                    }
+                ],
+                "additional_kwargs": {},
+                "response_metadata": {
+                    "token_usage": {
+                        "prompt_tokens": 2163,
+                        "total_tokens": 2587,
+                        "completion_tokens": 424
+                    },
+                    "model_name": "mistral-small",
+                    "model": "mistral-small",
+                    "finish_reason": "stop",
+                    "model_provider": "mistralai"
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019b7457-9cfe-7933-8f19-ec6c898b8990-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 2163,
+                    "output_tokens": 424,
+                    "total_tokens": 2587
+                }
+            }
+        }
+    ]
+}
