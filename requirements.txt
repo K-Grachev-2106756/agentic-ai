@@ -1,0 +1,14 @@
+huggingface-hub==1.2.3
+langchain-core==1.2.5
+langchain-mistralai==1.1.1
+langchain==1.2.0
+langgraph==1.0.5
+langsmith==0.5.2
+pydantic==2.12.5
+pydantic-core==2.41.5
+pyyaml==6.0.3
+requests==2.32.5
+tokenizers==0.22.1
+tqdm==4.67.1
+ipykernel==7.1.0
+python-dotenv==1.2.1
