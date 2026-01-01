@@ -12,6 +12,7 @@ from langgraph.checkpoint.memory import InMemorySaver
 
 from src.langchain_syntax.tools.web_search import web_search
 from src.langchain_syntax.llm.facrory import get_mistral
+from src.config import default_model_name
 
 
 class BaseAgent:
@@ -19,7 +20,7 @@ class BaseAgent:
     def __init__(
         self, 
         system_prompt: str,
-        llm_name: str = "mistral-small-latest",
+        llm_name: str = default_model_name,
     ):
         # Один диалог на объект
         self.config = {"configurable": {"thread_id": str(uuid.uuid4())}}  
