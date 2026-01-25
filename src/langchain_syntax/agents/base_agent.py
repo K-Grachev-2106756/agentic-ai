@@ -11,7 +11,7 @@ from langchain.messages import HumanMessage, SystemMessage
 from langgraph.checkpoint.memory import InMemorySaver
 
 from src.langchain_syntax.tools.web_search import web_search
-from src.langchain_syntax.llm.facrory import get_mistral
+from src.langchain_syntax.llm.factory import get_mistral
 from src.config import default_model_name
 
 
