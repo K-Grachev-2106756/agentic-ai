@@ -1,0 +1,157 @@
+{
+    "messages": [
+        {
+            "<class 'langchain_core.messages.human.HumanMessage'>": {
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "Hello. My name is Yan and I'm 23. I'd like to practice small-talk. What topics should we not talk about? "
+                    }
+                ],
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "18898b72-b7e5-409c-832f-a5d2413b88de"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 54,
+                        "prompt_tokens": 301,
+                        "total_tokens": 355,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "fc9013638fa54ef2936b69f671491c90",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019bf6c5-f26e-75e0-848f-155822dd5e85-0",
+                "tool_calls": [
+                    {
+                        "name": "PersonalInfo_setter",
+                        "args": {
+                            "field": "name",
+                            "value": "Yan"
+                        },
+                        "id": "gqDvLZJ0Z",
+                        "type": "tool_call"
+                    },
+                    {
+                        "name": "PersonalInfo_setter",
+                        "args": {
+                            "field": "age",
+                            "value": "23"
+                        },
+                        "id": "4l0qxYiF1",
+                        "type": "tool_call"
+                    },
+                    {
+                        "name": "ChatContext_getter",
+                        "args": {
+                            "field": "taboo_topics"
+                        },
+                        "id": "pyIfkcANX",
+                        "type": "tool_call"
+                    }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 301,
+                    "output_tokens": 54,
+                    "total_tokens": 355,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Successfully updated name",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "PersonalInfo_setter",
+                "id": "fb2f164b-25a8-44bc-97a5-b15666c0c5bc",
+                "tool_call_id": "gqDvLZJ0Z",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Successfully updated age",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "PersonalInfo_setter",
+                "id": "0165ae52-2138-447a-9fce-142b044f2d15",
+                "tool_call_id": "4l0qxYiF1",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "[\"Politics\", \"Diseases\"]",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "ChatContext_getter",
+                "id": "33470452-9ab8-4a52-a396-157082e6561d",
+                "tool_call_id": "pyIfkcANX",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "When having small talk, it's best to avoid topics like politics and diseases. These subjects can be sensitive or controversial, and it's generally a good idea to steer clear of them in casual conversations.",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 41,
+                        "prompt_tokens": 428,
+                        "total_tokens": 469,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "4891cbc7cc8e4bbd9ac4a13bec2e6226",
+                    "finish_reason": "stop",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019bf6c5-f54c-72b2-a5da-2adf93979c27-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 428,
+                    "output_tokens": 41,
+                    "total_tokens": 469,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        }
+    ]
+}
