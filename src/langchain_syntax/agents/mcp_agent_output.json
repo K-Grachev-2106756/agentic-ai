@@ -1,0 +1,113 @@
+{
+    "messages": [
+        {
+            "<class 'langchain_core.messages.human.HumanMessage'>": {
+                "content": "Tell me about the langchain-mcp-adapters library",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "15c70972-8d8e-468c-905d-a1d21724f4cc"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 19,
+                        "prompt_tokens": 207,
+                        "total_tokens": 226,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "38ddaad33e7a492f8fd340ee74ae096f",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019bf542-4b22-7c00-8b68-989474d418e1-0",
+                "tool_calls": [
+                    {
+                        "name": "web_search_mcp",
+                        "args": {
+                            "query": "langchain-mcp-adapters library"
+                        },
+                        "id": "AlOhTrG7M",
+                        "type": "tool_call"
+                    }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 207,
+                    "output_tokens": 19,
+                    "total_tokens": 226,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "- langchain-mcp-tools - PyPI (https://pypi.org/project/langchain-mcp-tools/): LangChain's official LangChain MCP Adapters library, which supports comprehensive integration with LangChain, has been released. You may want to consider using\n- MCP Adapters for LangChain and LangGraph (https://changelog.langchain.com/announcements/mcp-adapters-for-langchain-and-langgraph): # LangChain Changelog. Sign up for our newsletter to stay up to date. # MCP Adapters for LangChain and LangGraph. The **LangChain MCP Adapters** is a package that makes it easy to use **Anthropic Model Context Protocol (MCP) tools** with LangChain & LangGraph. * Converts **MCP tools** into **LangChain- & LangGraph-compatible tools**. * Enables interaction with tools across multiple **MCP servers**. * Seamlessly integrates the **hundreds of tool servers** already published into LangGraph Agents. ### Why use MCP Adapters:. This adapter makes it simple to connect LangChain and LangGraph with the growing ecosystem of MCP tool servers. Instead of manually adapting each tool, you can now integrate them seamlessly. It also allows agents to pull from multiple MCP servers at once, making it easier to combine different tools for more powerful applications. MCP is gaining serious traction, and this adapter helps LangGraph agents take full advantage. ##### Subscribe to updates.\n- langchain/mcp-adapters - NPM (https://www.npmjs.com/package/@langchain/mcp-adapters): The library allows you to connect to one or more MCP servers and load tools from them, without needing to manage your own MCP client instances. // Whether to throw on errors if a tool fails to load (optional, default: true). // Whether to prefix tool names with the server name (optional, default: false). // Whether to throw errors if a tool fails to load (optional, default: true). When calling tools from the `camera` MCP server, the following `outputHandling` config will be used:. Similarly, when calling tools on the `microphone` MCP server, the following `outputHandling` config will be used:. You can include a `defaultToolTimeout` field in the server config to set the timeout for all tools for that server, or globally for the entire client by setting it in the top-level config. For secure MCP servers that require OAuth 2.0 authentication, you can use the `authProvider` option instead of manually managing headers. const tools = await client.getTools(); // Only tools from \"working-server\".\n- Model Context Protocol (MCP) - Docs by LangChain (https://docs.langchain.com/oss/javascript/langchain/mcp): Model Context Protocol (MCP) is an open protocol that standardizes how applications provide tools and context to LLMs. LangChain agents can use tools defined on MCP servers using the `@langchain/mcp-adapters` library. import { MultiServerMCPClient } from \"@langchain/mcp-adapters\"; import { MultiServerMCPClient } from \"@langchain/mcp-adapters\"; import { ChatAnthropic } from \"@langchain/anthropic\"; import { ChatAnthropic } from \"@langchain/anthropic\";import { createAgent } from \"langchain\"; import { createAgent } from  \"langchain\"; const client = new MultiServerMCPClient({ const  client =  new  MultiServerMCPClient({  math: { math: { transport: \"stdio\", // Local subprocess communication transport:  \"stdio\", // Local subprocess communication command: \"node\", command:  \"node\", // Replace with absolute path to your math_server.js file // Replace with absolute path to your math_server.js file args: [\"/path/to/math_server.js\"], args: [\"/path/to/math_server.js\"], }, }, weather: { weather: { transport: \"http\", // HTTP-based remote server transport:  \"http\", // HTTP-based remote server // Ensure you start your weather server on port 8000 // Ensure you start your weather server on port 8000 url: \"http://localhost:8000/mcp\", url: \"http://localhost:8000/mcp\", }, },});}); const tools = await client.getTools(); const  tools =  await  client.\n- langchain-mcp-adapters (https://reference.langchain.com/python/langchain_mcp_adapters/): Tools adapter for converting MCP tools to LangChain tools. This module provides functionality to convert MCP tools into LangChain-compatible tools, handle tool"
+                    }
+                ],
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "web_search_mcp",
+                "id": "698a53f8-9f75-4e7a-b2f3-d907c126d8cf",
+                "tool_call_id": "AlOhTrG7M",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "The LangChain MCP Adapters library is a package designed to facilitate the integration of Anthropic Model Context Protocol (MCP) tools with LangChain and LangGraph. Here are some key points about the library:\n\n1. **Integration with LangChain and LangGraph**: The library allows for seamless integration of MCP tools into LangChain and LangGraph, enabling interaction with tools across multiple MCP servers. This makes it easier to combine different tools for more powerful applications.\n\n2. **Conversion of MCP Tools**: The library converts MCP tools into LangChain- and LangGraph-compatible tools, allowing agents to pull from multiple MCP servers at once.\n\n3. **Ecosystem of Tool Servers**: The adapter connects LangChain and LangGraph with the growing ecosystem of MCP tool servers, eliminating the need to manually adapt each tool.\n\n4. **Usage**: The library allows you to connect to one or more MCP servers and load tools from them without needing to manage your own MCP client instances. It supports various configurations, such as setting timeouts for tools and handling authentication for secure MCP servers.\n\n5. **Availability**: The library is available on both PyPI and NPM, making it accessible for Python and JavaScript/TypeScript developers.\n\nFor more detailed information, you can refer to the official documentation and changelogs provided by LangChain.",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 267,
+                        "prompt_tokens": 1200,
+                        "total_tokens": 1467,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "28bc15634d3f4b8b9d14f03c1212a23b",
+                    "finish_reason": "stop",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019bf542-555a-70d2-bf41-b708a0b5a54d-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 1200,
+                    "output_tokens": 267,
+                    "total_tokens": 1467,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        }
+    ]
+}
