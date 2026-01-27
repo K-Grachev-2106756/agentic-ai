@@ -1,0 +1,215 @@
+{
+    "messages": [
+        {
+            "<class 'langchain_core.messages.human.HumanMessage'>": {
+                "content": "I'm from London and I'd like a wedding in Paris for 41 guests, jazz-genre. The wedding date is 2026-06-16",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "ae52c9f6-7395-4f69-8492-975ae474360a"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 49,
+                        "prompt_tokens": 373,
+                        "total_tokens": 422,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "841e0f72b5534fcbae829ac917790340",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019c012c-5548-7d51-8e32-daeecdc3e709-0",
+                "tool_calls": [
+                    {
+                        "name": "update_state",
+                        "args": {
+                            "origin": "London",
+                            "destination": "Paris",
+                            "guest_count": "41",
+                            "genre": "jazz",
+                            "wedding_date": "2026-06-16"
+                        },
+                        "id": "JmJJVtYNz",
+                        "type": "tool_call"
+                    }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 373,
+                    "output_tokens": 49,
+                    "total_tokens": 422,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Successfully updated state",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "update_state",
+                "id": "a20ae32b-9a36-4888-a85b-e65cc3145f18",
+                "tool_call_id": "JmJJVtYNz",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 69,
+                        "prompt_tokens": 447,
+                        "total_tokens": 516,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "4f6d3c1e94504dd280be0478a7e51c81",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019c012c-57e0-7ee3-a087-11ed6f177b94-0",
+                "tool_calls": [
+                    {
+                        "name": "search_flights",
+                        "args": {
+                            "origin": "London",
+                            "destination": "Paris",
+                            "departing_date": "2026-06-16"
+                        },
+                        "id": "1j77kQbOP",
+                        "type": "tool_call"
+                    },
+                    {
+                        "name": "search_venues",
+                        "args": {
+                            "destination": "Paris",
+                            "guest_count": "41"
+                        },
+                        "id": "Lk9t6XUIA",
+                        "type": "tool_call"
+                    },
+                    {
+                        "name": "suggest_playlist",
+                        "args": {
+                            "genre": "jazz"
+                        },
+                        "id": "9AWGFTsZI",
+                        "type": "tool_call"
+                    }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 447,
+                    "output_tokens": 69,
+                    "total_tokens": 516,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Here are the best flight options for your trip from London to Paris on 2026-06-16:\n\n### Cheapest Flights\n\n| Route                     | Departure                          | Cabin Class | Price (EUR) | Book Now          |\n|---------------------------|------------------------------------|-------------|--------------|-------------------|\n| London LTN → Paris CDG    | 2026-06-16 19:10 → 21:30 (1h 20m) | Economy     | 42           | [Kiwi.com](https://on.kiwi.com/wIEpDE) |\n\n### Shortest Flights\n\n| Route                     | Departure                          | Cabin Class | Price (EUR) | Book Now          |\n|---------------------------|------------------------------------|-------------|--------------|-------------------|\n| London LHR → Paris CDG    | 2026-06-16 19:45 → 22:00 (1h 15m) | Economy     | 102          | [Kiwi.com](https://on.kiwi.com/O8BYBH) |\n| London LGW → Paris CDG    | 2026-06-16 17:00 → 19:15 (1h 15m) | Economy     | 85           | [Kiwi.com](https://on.kiwi.com/bdGw2H) |\n\n### Other Interesting Options\n\n| Route                     | Departure                          | Cabin Class | Price (EUR) | Book Now          |\n|---------------------------|------------------------------------|-------------|--------------|-------------------|\n| London LHR → Paris ORY    | 2026-06-16 15:00 → 17:35 (1h 35m) | Economy     | 50           | [Kiwi.com](https://on.kiwi.com/nkoNQR) |\n| London LGW → Paris CDG    | 2026-06-16 18:00 → 20:20 (1h 20m) | Economy     | 51           | [Kiwi.com](https://on.kiwi.com/LGbSWG) |\n| London LGW → Paris CDG    | 2026-06-16 16:30 → 18:50 (1h 20m) | Economy     | 71           | [Kiwi.com](https://on.kiwi.com/DZMF24) |\n| London LTN → Paris CDG    | 2026-06-16 12:30 → 14:55 (1h 25m) | Economy     | 70           | [Kiwi.com](https://on.kiwi.com/eS3lJq) |\n| London LGW → Paris CDG    | 2026-06-16 10:35 → 12:50 (1h 15m) | Economy     | 113          | [Kiwi.com](https://on.kiwi.com/d1YQpc) |\n| London LHR → Paris CDG    | 2026-06-16 15:25 → 17:45 (1h 20m) | Economy     | 113          | [Kiwi.com](https://on.kiwi.com/jEakLc) |\n\n### Summary\n\n- **Cheapest Flight**: London LTN → Paris CDG at 42 EUR\n- **Shortest Flight**: London LHR → Paris CDG at 1h 15m\n- **Recommended Flight**: London LTN → Paris CDG at 42 EUR\n\nEnjoy your trip to Paris! Did you know that Paris is known as the \"City of Light\" not only because of its illuminated streets but also because it was one of the first cities in the world to adopt gas street lighting?",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search_flights",
+                "id": "910b3109-0724-4eda-adb4-2a7319d945e3",
+                "tool_call_id": "1j77kQbOP",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Here are some wedding venues in Paris that can accommodate 41 guests:\n\n1. **Le Grand Domaine**: This venue can accommodate up to 41 guests and offers a stylish setting across its three properties. It is a great option for those looking to host a wedding in a beautiful and elegant environment. [Read more](https://chateaubeeselection.com/top-20-chateau-venues-for-a-large-wedding-in-france/)\n\n2. **The Peninsula Paris**: Located in the heart of Paris, The Peninsula offers luxury and romance. It is one of the most sought-after venues for weddings in the city. [Read more](https://www.yvogreutert.com/post/wedding-venues-paris)\n\n3. **The Westin Paris - Vendôme**: Situated between the Louvre and Place Vendôme, this venue offers stunning views over the Lake of Bois de Boulogne. It is perfect for couples looking for an intimate and elegant setting. [Read more](https://www.yvogreutert.com/post/wedding-venues-paris)\n\n4. **Hôtel du Louvre**: This historic hotel is a unique and romantic venue for weddings, located in the heart of Paris. [Read more](https://www.yelp.com/search?find_desc=Unique+Wedding+Venues&find_loc=Paris)\n\n5. **Grand Palais**: Known for its beautiful interior illumination and grand setting, the Grand Palais is a unique place to celebrate a wedding in Paris. [Read more](https://www.yelp.com/search?find_desc=Unique+Wedding+Venues&find_loc=Paris)\n\nThese venues offer a range of settings from luxurious to historic, ensuring that you can find the perfect place to celebrate your special day in Paris.",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search_venues",
+                "id": "92f40cb2-9708-4c4b-9c57-eea72de979f1",
+                "tool_call_id": "Lk9t6XUIA",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.tool.ToolMessage'>": {
+                "content": "Here is a curated list of jazz tracks for a wedding playlist:\n\n1. **Desafinado** by Antônio Carlos Jobim\n2. **Garota De Ipanema** by Antônio Carlos Jobim\n3. **Samba De Uma Nota Só (One Note Samba)** by Antônio Carlos Jobim\n4. **Por Causa De Você** by Antônio Carlos Jobim\n5. **Ligia** by Antônio Carlos Jobim\n6. **Fotografia** by Antônio Carlos Jobim\n7. **Dindi (Dindi)** by Antônio Carlos Jobim\n8. **Se Todos Fossem Iguais A Você (Instrumental)** by Antônio Carlos Jobim\n9. **Falando De Amor** by Antônio Carlos Jobim\n10. **Angela** by Antônio Carlos Jobim\n11. **Corcovado (Quiet Nights Of Quiet Stars)** by Antônio Carlos Jobim\n12. **Outra Vez** by Antônio Carlos Jobim\n13. **O Boto (Bôto)** by Antônio Carlos Jobim\n14. **Canta, Canta Mais** by Antônio Carlos Jobim\n15. **Quadrant** by Billy Cobham\n16. **Snoopy's search-Red baron** by Billy Cobham\n17. **Spanish moss-\"A sound portrait\"-Spanish moss** by Billy Cobham\n18. **Moon germs** by Billy Cobham\n19. **Stratus** by Billy Cobham\n20. **The pleasant pheasant** by Billy Cobham\n21. **Solo-Panhandler** by Billy Cobham\n22. **Do what cha wanna** by George Duke\n23. **Heart of the Night** by Spyro Gyra\n24. **De La Luz** by Spyro Gyra\n25. **Westwood Moon** by Spyro Gyra\n26. **Midnight** by Spyro Gyra\n27. **Playtime** by Spyro Gyra\n28. **Surrender** by Spyro Gyra\n29. **Valentino's** by Spyro Gyra\n30. **Believe** by Spyro Gyra\n31. **As We Sleep** by Spyro Gyra\n32. **When Evening Falls** by Spyro Gyra\n33. **J Squared** by Spyro Gyra\n34. **Best Thing** by Spyro Gyra\n35. **Now's The Time** by Miles Davis\n36. **Jeru** by Miles Davis\n37. **Compulsion** by Miles Davis\n38. **Tempus Fugit** by Miles Davis\n39. **Walkin'** by Miles Davis\n40. **\"Round Midnight** by Miles Davis\n41. **Bye Bye Blackbird** by Miles Davis\n42. **New Rhumba** by Miles Davis\n43. **Generique** by Miles Davis\n44. **Summertime** by Miles Davis\n45. **So What** by Miles Davis\n46. **The Pan Piper** by Miles Davis\n47. **Someday My Prince Will Come** by Miles Davis\n48. **My Funny Valentine (Live)** by Miles Davis\n49. **E.S.P.** by Miles Davis\n50. **Nefertiti** by Miles Davis\n51. **Petits Machins (Little Stuff)** by Miles Davis\n52. **Miles Runs The Voodoo Down** by Miles Davis\n53. **Little Church (Live)** by Miles Davis\n54. **Black Satin** by Miles Davis\n55. **Jean Pierre (Live)** by Miles Davis\n56. **Time After Time** by Miles Davis\n57. **Portia** by Miles Davis\n58. **Jeepers Creepers** by Gene Krupa\n59. **Blue Rythm Fantasy** by Gene Krupa\n60. **Drum Boogie** by Gene Krupa\n61. **Let Me Off Uptown** by Gene Krupa\n62. **Leave Us Leap** by Gene Krupa\n63. **Opus No.1** by Gene Krupa\n64. **Boogie Blues** by Gene Krupa\n65. **How High The Moon** by Gene Krupa\n66. **Disc Jockey Jump** by Gene Krupa\n67. **Up An' Atom** by Gene Krupa\n68. **Bop Boogie** by Gene Krupa\n69. **Lemon Drop** by Gene Krupa\n70. **Coronation Drop** by Gene Krupa\n71. **Overtime** by Gene Krupa\n72. **Imagination** by Gene Krupa\n73. **Don't Take Your Love From Me** by Gene Krupa\n74. **Midget** by Gene Krupa\n75. **I'm Coming Virginia** by Gene Krupa\n76. **Payin' Them Dues Blues** by Gene Krupa\n77. **Jungle Drums** by Gene Krupa\n78. **Showcase** by Gene Krupa\n79. **Swedish Schnapps** by Gene Krupa\n80. **Roll Call** by Jim Beard\n81. **Otay** by John Scofield, Robert Aries, Milton Chambers and Gary Grainger\n82. **Groovus Interruptus** by Jim Beard\n83. **Paris On Mine** by Jon Herington\n84. **In Time** by Sylvester Stewart\n85. **Plan B** by Dean Brown, Dennis Chambers & Jim Beard\n86. **Outbreak** by Jim Beard & Jon Herington\n87. **Baltimore, DC** by John Scofield\n88. **Talkin Loud and Saying Nothin** by James Brown & Bobby Byrd\n89. **Doce De Carnaval (Candy All)** by Gilberto Gil\n90. **Lamento De Carnaval** by Gilberto Gil\n91. **Pretinha** by Gilberto Gil\n92. **Colibri** by Richard Bull\n93. **Love Is The Colour** by R. Carless\n94. **Magnetic Ocean** by Patrick Claher/Richard Bull\n95. **Deep Waters** by Richard Bull\n96. **L'Arc En Ciel De Miles** by Kevin Robinson/Richard Bull\n97. **Gypsy** by Kevin Robinson\n98. **Journey Into Sunlight** by Jean Paul Maunick\n99. **Sunchild** by Graham Harvey\n100. **Millenium** by Maxton Gig Beesley Jnr.\n101. **Thinking 'Bout Tomorrow** by Fayyaz Virgi/Richard Bull\n102. **Jacob's Ladder** by Julian Crampton\n103. **She Wears Black** by G Harvey/R Hope-Taylor\n104. **Dark Side Of The Cog** by Jean Paul Maunick\n105. **Springsville** by J. Carisi\n106. **The Maids Of Cadiz** by L. Delibes\n107. **The Duke** by Dave Brubeck\n108. **My Ship** by Ira Gershwin, Kurt Weill\n109. **Miles Ahead** by Miles Davis, Gil Evans\n110. **Blues For Pablo** by Gil Evans\n111. **New Rhumba** by A. Jamal\n112. **The Meaning Of The Blues** by R. Troup, L. Worth\n113. **Lament** by J.J. Johnson\n114. **I Don't Wanna Be Kissed (By Anyone But You)** by H. Spina, J. Elliott\n115. **Springsville (Alternate Take)** by J. Carisi\n116. **Blues For Pablo (Alternate Take)** by Gil Evans\n117. **The Meaning Of The Blues/Lament (Alternate Take)** by J.J. Johnson/R. Troup, L. Worth\n118. **I Don't Wanna Be Kissed (By Anyone But You) (Alternate Take)** by H. Spina, J. Elliott\n119. **Morning Dance** by Jay Beckenstein\n120. **Jubilee** by Jeremy Wall\n121. **Rasul** by Jeremy Wall\n122. **Song For Lorraine** by Jay Beckenstein\n123. **Starburst** by Jeremy Wall\n124. **Heliopolis** by Jay Beckenstein\n125. **It Doesn't Matter** by Chet Catallo\n126. **Little Linda** by Jeremy Wall\n127. **End Of Romanticism** by Rick Strauss\n128. **Amanda** by Luca Gusella\n129. **Despertar** by Andrea Dulbecco\n130. **OAM's Blues** by Aaron Goldberg\n\n### Total Duration:\nThe total duration of the playlist is approximately 77 hours and 39 minutes.\n\n### Total Cost:\nThe total cost of the playlist is 128.7 USD.",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "suggest_playlist",
+                "id": "ad01d4c6-3ec3-4652-9f36-ec009f245c88",
+                "tool_call_id": "9AWGFTsZI",
+                "artifact": null,
+                "status": "success"
+            }
+        },
+        {
+            "<class 'langchain_core.messages.ai.AIMessage'>": {
+                "content": "Here is the plan for your wedding in Paris:\n\n1. **Flights**: The cheapest flight option from London to Paris on 2026-06-16 is London LTN → Paris CDG at 42 EUR. The shortest flight option is London LHR → Paris CDG at 1h 15m. The recommended flight is London LTN → Paris CDG at 42 EUR.\n\n2. **Venues**: Some recommended venues in Paris that can accommodate 41 guests are Le Grand Domaine, The Peninsula Paris, The Westin Paris - Vendôme, Hôtel du Louvre, and Grand Palais. These venues offer a range of settings from luxurious to historic, ensuring that you can find the perfect place to celebrate your special day in Paris.\n\n3. **Playlist**: A curated list of jazz tracks for your wedding playlist includes songs by Antônio Carlos Jobim, Billy Cobham, George Duke, Spyro Gyra, Miles Davis, Gene Krupa, Jim Beard, Jon Herington, and many more. The total duration of the playlist is approximately 77 hours and 39 minutes, and the total cost is 128.7 USD.\n\nEnjoy your wedding in Paris!",
+                "additional_kwargs": {
+                    "refusal": null
+                },
+                "response_metadata": {
+                    "token_usage": {
+                        "completion_tokens": 255,
+                        "prompt_tokens": 3843,
+                        "total_tokens": 4098,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": null,
+                        "num_cached_tokens": 0
+                    },
+                    "model_provider": "openai",
+                    "model_name": "mistral-small-latest",
+                    "system_fingerprint": null,
+                    "id": "c9bf9725b3da482a90ca6781f36c41a1",
+                    "finish_reason": "stop",
+                    "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019c012c-cb4c-72a0-9368-883817146627-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                    "input_tokens": 3843,
+                    "output_tokens": 255,
+                    "total_tokens": 4098,
+                    "input_token_details": {},
+                    "output_token_details": {}
+                }
+            }
+        }
+    ]
+}
