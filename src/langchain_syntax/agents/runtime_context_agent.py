@@ -5,7 +5,7 @@ sys.path.append(os.getcwd())
 import random
 import json
 import uuid
-from typing import Dict, Any, Literal, Union, Tuple, Optional
+from typing import Dict, Any, Tuple, Optional
 
 from langchain.agents import create_agent, AgentState
 from langchain.messages import HumanMessage, SystemMessage
@@ -13,7 +13,7 @@ from langchain.tools import BaseTool
 from langgraph.checkpoint.memory import InMemorySaver
 
 from src.langchain_syntax.llm.factory import get_mistral
-from src.langchain_syntax.tools.context import (
+from src.langchain_syntax.agents.tools.context import (
     context_getter_factory, 
     state_setter_factory, 
     state_getter_factory,

@@ -11,7 +11,7 @@ from langchain.messages import HumanMessage
 
 from src.logging_config import setup_logging
 from src.langchain_syntax.llm.factory import get_mistral
-from src.langchain_syntax.mcp.utils import sanitize_mcp_tool
+from src.langchain_syntax.agents.mcp.utils import sanitize_mcp_tool
 from src.config import default_model_name
 
 

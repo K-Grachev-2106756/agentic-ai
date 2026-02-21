@@ -14,9 +14,9 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_community.utilities import SQLDatabase
 from langchain.agents import create_agent, AgentState
 
-from src.langchain_syntax.mcp.utils import sanitize_mcp_tool
-from src.langchain_syntax.tools.web_search import web_search
-from src.langchain_syntax.tools.database import database_tool_factory
+from src.langchain_syntax.agents.mcp.utils import sanitize_mcp_tool
+from src.langchain_syntax.agents.tools.web_search import web_search
+from src.langchain_syntax.agents.tools.database import database_tool_factory
 from src.langchain_syntax.llm.factory import get_mistral
 
 

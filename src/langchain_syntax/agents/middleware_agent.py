@@ -11,10 +11,10 @@ from langgraph.types import Command
 from langchain.messages import ToolMessage, HumanMessage
 from langgraph.checkpoint.memory import InMemorySaver
 
-from src.langchain_syntax.middleware.dynamic_models import dynamic_model_context_size_factory
-from src.langchain_syntax.middleware.dynamic_prompt import dynamic_prompt_factory
-from src.langchain_syntax.middleware.dynamic_tools import dynamic_tools_factory
-from src.langchain_syntax.middleware.human_in_the_loop import (
+from src.langchain_syntax.agents.middleware.dynamic_models import dynamic_model_context_size_factory
+from src.langchain_syntax.agents.middleware.dynamic_prompt import dynamic_prompt_factory
+from src.langchain_syntax.agents.middleware.dynamic_tools import dynamic_tools_factory
+from src.langchain_syntax.agents.middleware.human_in_the_loop import (
     hitl_factory, 
     human_response_interpretation,
 )
