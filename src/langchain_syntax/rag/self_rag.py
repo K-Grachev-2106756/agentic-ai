@@ -4,23 +4,24 @@ import os
 import sys
 sys.path.append(os.getcwd())
 import json
-import re
 
-from datasets import load_dataset
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.documents.base import Document
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
-from langchain_chroma.vectorstores import Chroma
-from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 
 from src.langchain_syntax.llm.factory import get_mistral
+from src.langchain_syntax.rag.base_rag import RAG, format_single_doc
 
 
-class SelfRAG:
+class SelfRAG(RAG):
 
-    def __init__(self):
+    def __init__(
+        self,
+        encoder_model_name: str = "Qwen/Qwen3-Embedding-0.6B",
+        hugging_face_dataset: str = "BI55/MedText",
+        db_dir: str = "./src/data/rag",
+    ):
         self.llm = get_mistral()
-        self.history = None
+        self.history = []
 
         self.init_critique_chain()
         self.init_document_relevance_chain()
@@ -29,7 +30,11 @@ class SelfRAG:
         self.init_retrieve_necessity_chain()
         self.init_no_context_generation_chain()
 
-        self.init_db()
+        self.init_db(
+            encoder_model_name=encoder_model_name,
+            hugging_face_dataset=hugging_face_dataset,
+            db_dir=db_dir,
+        )
 
 
     def init_retrieve_necessity_chain(self):
@@ -62,45 +67,7 @@ class SelfRAG:
         self.no_context_generation_chain = no_context_generation_prompt_templ | self.llm | StrOutputParser()
 
 
-    def init_db(
-        self,
-        encoder_model_name: str = "Qwen/Qwen3-Embedding-0.6B",
-        hugging_face_dataset: str = "BI55/MedText",
-        db_dir: str = "./src/data/rag",
-    ):
-
-        embeddings = HuggingFaceEmbeddings(
-            model_name=encoder_model_name, 
-            encode_kwargs={"normalize_embeddings": True},
-        )
-
-        collection_name = re.sub(r"[^a-zA-Z0-9._-]", "", hugging_face_dataset)
-        if os.path.exists(db_dir):
-            self.db = Chroma(
-                persist_directory=db_dir, 
-                collection_name=collection_name,
-                embedding_function=embeddings,
-            )
-        else:
-            d = load_dataset(hugging_face_dataset)
-
-            docs = [
-                Document(
-                    page_content=v["Prompt"], 
-                    metadata={"R": v["Completion"]},
-                ) for v in d["train"]
-            ]
-
-            self.db = Chroma.from_documents(
-                documents=docs,
-                embedding=embeddings,
-                collection_name=collection_name,
-                persist_directory=db_dir,
-            )
-
-    
-
-    def self_rag_inference(self, question: str, max_retries: int = 2, top_k: int = 3):
+    def invoke(self, question: str, max_retries: int = 2, top_k: int = 3) -> str:
         candidates, best_contexts = {"fully": [], "partially": []}, []
 
         for i_retry in range(max_retries):
@@ -204,14 +171,6 @@ class SelfRAG:
         })
 
 
-def format_single_doc(doc: Document):
-    return f"Patient: {doc.page_content}\nConclusion:{doc.metadata['R']}"
-
-
-def format_retriever_output(docs: list[Document]):
-    return "\n\n".join(format_single_doc(d) for d in docs)
-
-
 retrieve_necessity_prompt = """
 Given the input:
 Question:
@@ -289,12 +248,12 @@ If the question has nothing to do with health, answer "I can't answer your quest
 
 
 
+
 if __name__ == "__main__":
     rag = SelfRAG()
 
-    # user_query = "Headache every day, can't sleep, constant dry mouth. I don't use drugs, alcohol, or cigarettes."
     user_query = "I'm 24 years old young woman. I do not smoking and drinking, I don't take medications. Excessive hair loss, lethargy, bags under the eyes, gray skin tone. What are the possible causes of my ailments?"
-    rag_answer = rag.self_rag_inference(user_query, max_retries=3)
+    rag_answer = rag.invoke(user_query, max_retries=3)
 
     with open(os.path.join(os.path.dirname(__file__), "self_rag.json"), "w", encoding="utf-8") as f:
         json.dump(
