@@ -13,7 +13,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
-from src.langchain_syntax.rag.reranker import rerank_documents
+from src.langchain_syntax.rag.advanced import rerank_documents
 from src.langchain_syntax.llm.factory import get_mistral
 from src.config import reranker_model_name
 
